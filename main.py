@@ -1,31 +1,54 @@
+'''import random
+
+test_seed = int(input("Create a seed number :"))
+random.seed(test_seed)
+random_side= random.randint(0,1)
+if(random_side==0):
+    print("Head")
+else:
+    print("Tails")    
 import random
-l = ['A ','a','B' ,'b','C' ,'c','D' ,'d','E', 'e','F' ,'f','G' ,'g','H' ,'h','I' ,'i','J' ,'j','K' ,'k','L' ,'l','M' ,'m','N' ,'n','O' ,'o','P', 'p','Q' ,'q','R' ,'r','S' ,'s','T'  ,'t','U' ,'u','V', 'v','W' ,'w','X' ,'x','Y' ,'y','Z' ,'z']
-n = ['0','1','2','3','4','5','6','7','8','9']
-s = ['!','@','#','$','%','*','^','&','(',')','+']
+nameAsCSV = input("Give me everybody's name ,seperated by commas")
+name = nameAsCSV.split(",")
+print(name)
+l =  len(name)
+random_choice=random.randint(0,l-1)
+pay= name[random_choice]
 
-print("Welcome to the pypassword generator")
-nr_l= int (input("How many letters would you like in your password?\n"))
-nr_s = int(input("How many symbol would you like?\n"))
-nr_n = int(input("How many numbers would you like?\n"))
-p=[]
-for c in range(1,nr_l+1):
-    p += random.choice(l)
+print(pay)
 
+row1 = ["🖽","🖽","🖽"]
+row2 = ["🖽","🖽","🖽"]
+row3 = ["🖽","🖽","🖽"]
+map = [row1,row2,row3]
+print(f"{row1}\n{row2}\n{row3}")
+position = input("Where do you want to put the treasure?")
+h = int(position[0])
+v = int(position[1])
+map[v -1][h-1]="X"
 
-for c in range(1,nr_s+1):
-    p += random.choice(s)
+print(f"{row1}\n{row2}\n{row3}")'''
 
+import random
+rock= "✊"
+paper = "✋"
+scissor="✌🏼"
+game_image=[rock,paper,scissor]
+c = int(input("What do you choose?Type 0 for rock,1 for paper or 2 for Scissors"))
+print(game_image [c])
+   
+c_c = random.randint(0,2)
+print(f"computer choice{c_c}")
+print(game_image[c_c])
+if c == 0 and c_c ==2 :
+    print("you win")
+elif( c>=3 or c<0):
+    print("You typed invalid number you lose!")
+elif(c_c ==0 and c ==2):
+    print("You lose")        
+elif c_c > c:
+    print("you lose")
+elif c_c == c:
+    print ("it's a draw")    
 
-
-for c in range(1,nr_n+1):
-    p += random.choice(n)    
-
-print(p)
-random.shuffle(p)
-print(p)
- 
-p=""
-for c in p:
-    p+=c
-print(f"Your password is:{p}")    
 
